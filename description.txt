@@ -1,0 +1,12 @@
+1. Fully functional with the change of id
+2. use of ternary operation of showing the value that is not already exist.
+3. what i show mandatory? 
+    - image
+    - name
+    - details 
+    - varivication sign 
+    - show the times :)
+    - sort using the views 
+    - written blog
+    - responsive 
+    
