@@ -1,0 +1,15 @@
+*{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+}
