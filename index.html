@@ -18,19 +18,18 @@
   <body>
     <nav>
       <img src="./images/Logo.png" alt="" />
-      <button onclick="sorting()" class="btn btn-outline-secondary">Sort By</button>
+      <button onclick="loadData()" class="btn btn-outline-secondary">Sort By</button>
       <button class="btn btn-primary"><a href="blog.html" target="_blank">Blog</a></button>
     </nav>
     <hr />
     <section class="option">
-      <button class="btn btn-danger all" onclick="loadData()">All</button>
-      <button class="btn btn-secondary" onclick="loadData()">Music</button>
-      <button class="btn btn-secondary" onclick="loadData()">Comedy</button>
-      <button class="btn btn-secondary" onclick="loadData()">Drawing</button>
+      <button class="btn btn-danger all" onclick="loadData('1000')">All</button>
+      <button class="btn btn-secondary" onclick="loadData('1001')">Music</button>
+      <button class="btn btn-secondary" onclick="loadData('1003')">Comedy</button>
+      <button class="btn btn-secondary" onclick="loadData('1005')">Drawing</button>
     </section>
     <section class="cards" id="card-container">
         
-
     </section>
 
     <!-- JS Link -->
@@ -38,4 +37,4 @@
   </body>
 </html>
 
-<img src="" alt="">
+
