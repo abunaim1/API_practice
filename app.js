@@ -1,9 +1,3 @@
-// const loadData = () => {
-//   fetch(`https://openapi.programming-hero.com/api/videos/category/1000`)
-//     .then((res) => res.json())
-//     .then((data) => console.log(data));
-// };
-
 const loadData = (idChekar) => {
   document.getElementById("card-container").innerHTML = " ";
   document.getElementById("opps-container").innerHTML = " ";
@@ -11,10 +5,10 @@ const loadData = (idChekar) => {
     .then((res) => res.json())
     .then((data) => {
       displayData(data.data);
-      sorting(data.data);
+      document.getElementById("sort-data").onclick(sorting(idChekar));
     });
 };
-
+গিট্ 
 const displayData = (data) => {
   const cardContainer = document.getElementById("card-container");
   data.forEach((item) => {
@@ -54,7 +48,17 @@ function formatTimeAgo(minutes) {
 
 loadData("1000");
 
-const sorting = (data) => {
+const sorting = (idChekar) => {
+  document.getElementById("card-container").innerHTML = " ";
+  document.getElementById("opps-container").innerHTML = " ";
+  fetch(`https://openapi.programming-hero.com/api/videos/category/${idChekar}`)
+    .then((res) => res.json())
+    .then((data) => {
+      convertArrayToSort(data.data);
+    });
+};
+
+const convertArrayToSort = (data) => {
   const arr = [];
   data.forEach((item) => {
     arr.push(item);
