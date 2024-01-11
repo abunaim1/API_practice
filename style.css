@@ -64,3 +64,13 @@ nav a{
     margin: 0;
     padding: 0;
 } 
+#opps-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    font-size: 40px;
+}
+#opps-container img{
+    margin-left: 250px;
+}
