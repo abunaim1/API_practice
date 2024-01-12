@@ -48,6 +48,8 @@ const displayData = (data, id) => {
   });
 };
 const opps = () => {
+  const sortData = document.getElementById("sort-data");
+  sortData.onclick = function () {};
   document.getElementById("card-container").innerHTML = " ";
   document.getElementById("opps-container").innerHTML = " ";
   const oppsContainer = document.getElementById("opps-container");
