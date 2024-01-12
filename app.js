@@ -81,5 +81,3 @@ const sortDataTriggert = (data, id) => {
 };
 loadData();
 dataTriggerd("1000");
-
-// '<i class="fa-solid fa-certificate"></i>'
