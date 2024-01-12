@@ -1,14 +1,23 @@
-const loadData = (idChekar) => {
+const loadData = (buttonName) => {
   document.getElementById("card-container").innerHTML = " ";
   document.getElementById("opps-container").innerHTML = " ";
-  fetch(`https://openapi.programming-hero.com/api/videos/category/${idChekar}`)
+  fetch(`https://openapi.programming-hero.com/api/videos/categories`)
     .then((res) => res.json())
     .then((data) => {
-      displayData(data.data);
-      document.getElementById("sort-data").onclick(sorting(idChekar));
+      dataLoad(data, buttonName);
     });
 };
-গিট্ 
+const dataLoad = (data, buttonName) => {
+  for (var i = 0; i < data.data.length; i++) {
+    if (data.data[i].category == buttonName) {
+      fetch(`https://openapi.programming-hero.com/api/videos/category/${data.data[i].category_id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          data.status ? displayData(data.data) : opps();
+        });
+    }
+  }
+};
 const displayData = (data) => {
   const cardContainer = document.getElementById("card-container");
   data.forEach((item) => {
@@ -31,6 +40,7 @@ const displayData = (data) => {
 };
 const opps = () => {
   document.getElementById("card-container").innerHTML = " ";
+  document.getElementById("opps-container").innerHTML = " ";
   const oppsContainer = document.getElementById("opps-container");
   const oppsDetails = document.createElement("div");
   oppsDetails.innerHTML = `
@@ -46,23 +56,16 @@ function formatTimeAgo(minutes) {
   return `${hours} hours ${remainingMinutes} minutes ago`;
 }
 
-loadData("1000");
-
-const sorting = (idChekar) => {
-  document.getElementById("card-container").innerHTML = " ";
-  document.getElementById("opps-container").innerHTML = " ";
-  fetch(`https://openapi.programming-hero.com/api/videos/category/${idChekar}`)
-    .then((res) => res.json())
-    .then((data) => {
-      convertArrayToSort(data.data);
-    });
+const sorting = (data) => {
+  
 };
+loadData("All");
 
-const convertArrayToSort = (data) => {
-  const arr = [];
-  data.forEach((item) => {
-    arr.push(item);
-  });
-  const sortedArray = arr.sort((a, b) => parseInt(b.others.views) - parseInt(a.others.views));
-  displayData(sortedArray);
-};
+
+
+// const arr = [];
+// data.forEach((item) => {
+//   arr.push(item);
+// });
+// const sortedArray = arr.sort((a, b) => parseInt(b.others.views) - parseInt(a.others.views));
+// displayData(sortedArray)

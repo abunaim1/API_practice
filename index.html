@@ -18,15 +18,15 @@
   <body>
     <nav>
       <img src="./images/Logo.png" alt="" />
-      <button onclick="" id="sort-data" class="btn btn-outline-secondary">Sort By</button>
+      <button id="sort-data" class="btn btn-outline-secondary">Sort By</button>
       <button class="btn btn-primary"><a href="blog.html" target="_blank">Blog</a></button>
     </nav>
     <hr />
     <section class="option">
-      <button class="btn btn-danger all" onclick="loadData('1000')">All</button>
-      <button class="btn btn-secondary" onclick="loadData('1001')">Music</button>
-      <button class="btn btn-secondary" onclick="loadData('1003')">Comedy</button>
-      <button class="btn btn-secondary" onclick="opps()">Drawing</button>
+      <button id="normal" class="btn btn-danger all" onclick="loadData('All')">All</button>
+      <button id="normal" class="btn btn-secondary" onclick="loadData('Music')">Music</button>
+      <button id="normal" class="btn btn-secondary" onclick="loadData('Comedy')">Comedy</button>
+      <button class="btn btn-secondary" onclick="loadData('Drawing')">Drawing</button>
     </section>
     <section class="cards" id="card-container"></section>
     <section id="opps-container"></section>
@@ -34,5 +34,3 @@
     <script src="./app.js"></script>
   </body>
 </html>
-
-

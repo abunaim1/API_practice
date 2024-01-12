@@ -10,3 +10,10 @@
     - written blog
     - responsive 
     
+
+
+
+
+correction: Make buttons dynamic. from categories
+
+then catch the id from catagory and load data with this id
