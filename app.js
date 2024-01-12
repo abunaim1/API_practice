@@ -37,7 +37,10 @@ const displayData = (data, id) => {
         <div><p class="card-caption">${item.title}</p></div>
         </div>
         <div class = "author-name">
-        <p>${item?.authors[0].profile_name} ${item.authors[0].varified ? '<i class="fa-solid fa-certificate"></i>' : " "}</p>
+        <div class = "varify">
+        <p>${item?.authors[0].profile_name}</p>
+        <p class="varify">${item.authors[0].verified ? '<i class="fa-solid fa-certificate"></i>' : ""}</p>
+        </div>
         <p class = "author-name views" id = "views-sort">${item.others.views}</p>
         </div>
         `;
@@ -70,11 +73,13 @@ const sorting = (id) => {
 
 const sortDataTriggert = (data, id) => {
   const arr = [];
-  data.forEach(item => {
+  data.forEach((item) => {
     arr.push(item);
-  })
+  });
   arr.sort((a, b) => parseInt(b.others.views) - parseInt(a.others.views));
   displayData(arr, id);
-} 
+};
 loadData();
-dataTriggerd('1000');
+dataTriggerd("1000");
+
+// '<i class="fa-solid fa-certificate"></i>'

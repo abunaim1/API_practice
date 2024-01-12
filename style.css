@@ -74,3 +74,8 @@ nav a{
     background-color: black;
     color: white;
 }
+.varify{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
