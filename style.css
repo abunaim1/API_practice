@@ -1,81 +1,80 @@
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 40px;
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 40px;
 }
-nav a{
-    text-decoration: none;
-    color: white;
+nav a {
+  text-decoration: none;
+  color: white;
 }
-.option{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 20px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+.option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-#card-container{
-    display: flex;
-    justify-content: center;    
-    align-items: center;
-    flex-wrap: wrap;
-    column-gap: 20px;
-    row-gap: 30px;
+#card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 30px;
 }
-.card-individual{
-    height: fit-content;
-    width: 300px;
-    
+.card-individual {
+  height: fit-content;
+  width: 300px;
 }
-.thumbnail-image{
-    width: 100%;
-    height: 200px;
-    border-radius: 8px;
+.thumbnail-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
 }
-.caption-image{
-    width: 40px;
-    height: 40px;
-    border-radius: 40px;
+.caption-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
 }
-.caption{
-    display: flex;
-    align-items: center;
-    column-gap: 20px;
+.caption {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
 }
-.card-caption{
-    padding-top: 16px;
+.card-caption {
+  padding-top: 16px;
 }
-.author-name{
-    font-size: 14px;
-    font-weight: 400;
-    color: rgba(23, 23, 23, 0.70);
-    padding-left: 60px;
+.author-name {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(23, 23, 23, 0.7);
+  padding-left: 60px;
 }
-.views{
-    margin: 0;
-    padding: 0;
-} 
-#opps-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 200px;
-    font-size: 40px;
+.views {
+  margin: 0;
+  padding: 0;
 }
-#opps-container img{
-    margin-left: 250px;
+#opps-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  font-size: 40px;
 }
-.time{
-    position: relative;
-    bottom: 25px;
-    left: 90px;
-    background-color: black;
-    color: white;
+#opps-container img {
+  margin-left: 250px;
 }
-.varify{
-    display: flex;
-    align-items: center;
-    column-gap: 20px;
+.time {
+  position: relative;
+  bottom: 25px;
+  left: 90px;
+  background-color: black;
+  color: white;
+}
+.varify {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
 }
