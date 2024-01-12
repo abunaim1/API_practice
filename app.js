@@ -1,24 +1,30 @@
-const loadData = (buttonName) => {
-  document.getElementById("card-container").innerHTML = " ";
-  document.getElementById("opps-container").innerHTML = " ";
+const loadData = () => {
   fetch(`https://openapi.programming-hero.com/api/videos/categories`)
     .then((res) => res.json())
     .then((data) => {
-      dataLoad(data, buttonName);
+      dataLoad(data.data);
     });
 };
-const dataLoad = (data, buttonName) => {
-  for (var i = 0; i < data.data.length; i++) {
-    if (data.data[i].category == buttonName) {
-      fetch(`https://openapi.programming-hero.com/api/videos/category/${data.data[i].category_id}`)
-        .then((res) => res.json())
-        .then((data) => {
-          data.status ? displayData(data.data) : opps();
-        });
-    }
-  }
+const dataLoad = (data) => {
+  const allButton = document.getElementById("buttons");
+  data.forEach((item) => {
+    const button = document.createElement("div");
+    button.innerHTML = `<button onclick = dataTriggerd(${item.category_id}) class="btn btn-secondary btn-lg">${item.category}</button>`;
+    allButton.appendChild(button);
+  });
 };
-const displayData = (data) => {
+const dataTriggerd = (id) => {
+  fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`)
+    .then((res) => res.json())
+    .then((data) => (data.status ? displayData(data.data, id) : opps()));
+};
+const displayData = (data, id) => {
+  const sortData = document.getElementById("sort-data");
+  sortData.onclick = function () {
+    sorting(id);
+  };
+  document.getElementById("card-container").innerHTML = " ";
+  document.getElementById("opps-container").innerHTML = " ";
   const cardContainer = document.getElementById("card-container");
   data.forEach((item) => {
     const card = document.createElement("div");
@@ -56,16 +62,18 @@ function formatTimeAgo(minutes) {
   return `${hours} hours ${remainingMinutes} minutes ago`;
 }
 
-const sorting = (data) => {
-  
+const sorting = (id) => {
+  fetch(`https://openapi.programming-hero.com/api/videos/category/${id}`)
+    .then((res) => res.json())
+    .then((data) => sortDataTriggert(data.data, id));
 };
-loadData("All");
 
-
-
-// const arr = [];
-// data.forEach((item) => {
-//   arr.push(item);
-// });
-// const sortedArray = arr.sort((a, b) => parseInt(b.others.views) - parseInt(a.others.views));
-// displayData(sortedArray)
+const sortDataTriggert = (data, id) => {
+  const arr = [];
+  data.forEach(item => {
+    arr.push(item);
+  })
+  arr.sort((a, b) => parseInt(b.others.views) - parseInt(a.others.views));
+  displayData(arr, id);
+} 
+loadData();

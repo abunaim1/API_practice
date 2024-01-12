@@ -16,13 +16,6 @@ nav a{
     margin-top: 30px;
     margin-bottom: 30px;
 }
-.all{
-    width: 65px;
-    height: 35px;
-}
-.btn{
-    height: 35px;
-}
 #card-container{
     display: flex;
     justify-content: center;    
