@@ -77,3 +77,4 @@ const sortDataTriggert = (data, id) => {
   displayData(arr, id);
 } 
 loadData();
+dataTriggerd('1000');

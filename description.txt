@@ -5,7 +5,7 @@
     - name
     - details 
     - varivication sign 
-    - show the times :)
+    - show the times
     - sort using the views 
     - written blog
     - responsive 
